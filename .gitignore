@@ -8,6 +8,10 @@ target/
 lib_managed/
 src_managed/
 project/boot/
+core/project/.boot/
+core/project/.ivy/
+core/project/.sbtboot/
+project/
 project/plugins/project/
 project/activator-sbt*
 examples/*/target-env.sbt
