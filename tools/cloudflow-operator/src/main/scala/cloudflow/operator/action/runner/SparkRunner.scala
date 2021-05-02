@@ -228,7 +228,8 @@ final class SparkRunner(sparkRunnerDefaults: SparkRunnerDefaults) extends Runner
     val secrets = Seq(SparkApp.NamePathSecretType(deployment.secretName, Runner.SecretMountPath))
 
     val name = resourceName(deployment)
-    val labels = appLabels.withComponent(name, CloudflowLabels.StreamletComponent) + ("version" -> "2.4.5") ++
+    val labels =
+      appLabels.withComponent(name, CloudflowLabels.StreamletComponent) + ("version" -> "3.1.1") ++ //#todo 2.4.5"
       updateLabels ++
       Map(CloudflowLabels.StreamletNameLabel -> deployment.streamletName, CloudflowLabels.AppIdLabel -> appId).view
         .mapValues(Name.ofLabelValue)
@@ -498,7 +499,7 @@ object SparkApp {
   final case class Spec(
       `type`: String = "Scala",
       mode: String = "cluster",
-      sparkVersion: String = "2.4.5",
+      sparkVersion: String = "3.1.1", //#todo 2.4.5"
       image: String = "", // required parameter
       imagePullPolicy: String = "Always",
       mainClass: String = "", // required parameter

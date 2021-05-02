@@ -88,7 +88,7 @@ object CloudflowSparkPlugin extends AutoPlugin {
         IO.write(sparkEntrypointSh, sparkEntrypointShContent)
 
         val scalaVersion = (ThisProject / scalaBinaryVersion).value
-        val sparkVersion = "2.4.5"
+        val sparkVersion = "3.1.1" //#todo 2.4.5"
         val sparkHome = "/opt/spark"
 
         val sparkTgz = s"spark-${sparkVersion}-bin-cloudflow-${scalaVersion}.tgz"
