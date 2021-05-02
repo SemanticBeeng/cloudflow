@@ -6,7 +6,16 @@ object Dependencies {
   val Scala212 = "2.12.12" // has to be the very same as sbt
   val Scala213 = "2.13.3" // Scala 2.13.4 breaks scopt when using "--help"
 
-  import Versions._
+  object Versions {
+    val akka = "2.6.13"
+    val akkaHttp = "10.2.4"
+    val akkaGrpc = "1.0.2"
+    val fabric8 = "5.0.0"
+    val jackson = "2.11.4" // same major.minor as used in fabric8
+    //#todo val spark = "3.1.1"
+    val slf4j = "1.7.30"
+    val scalaTest = "3.2.3"
+  }
 
   object Compile {
     val fabric8KubernetesClient = "io.fabric8" % "kubernetes-client" % Versions.fabric8
